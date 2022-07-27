@@ -3,9 +3,24 @@
 
 {% block body %}
 	<h1>Make Predictions</h1>
-	<button>
-		{% for prediction in predictions %}
-			
-		{% endfor %}
-	</button>
+
+	{% for prediction in predictions %}
+		<h3>{{ prediction['name'] }}</h3>
+		<button onclick="option1()">{{ prediction['option1'] }}</button>
+		<button onclick="option2()">{{ prediction['option2'] }}</button>
+		<br>
+	{% endfor %}
+
 {% endblock %}
+
+{% block script %}
+<script>
+	function option1() {
+		alert('option 1');
+	}
+
+	function option2() {
+		alert('option 2');
+	}
+</script>
+{% endblock%}
